@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="650.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LoginController">
     
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="26.0" prefHeight="62.0" prefWidth="357.0" text="TASK MANAGER" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="71.0" prefHeight="62.0" prefWidth="357.0" text="TASK MANAGER" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="42.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="243.0" />
-      <TextField layoutX="224.0" layoutY="187.0" />
-      <Label layoutX="151.0" layoutY="191.0" text="User" />
+      <TextField layoutX="217.0" layoutY="242.0" prefHeight="26.0" prefWidth="262.0" />
+      <TextField layoutX="217.0" layoutY="200.0" prefHeight="26.0" prefWidth="261.0" />
+      <Label layoutX="176.0" layoutY="204.0" text="User" />
       <Label layoutX="151.0" layoutY="246.0" text="Password" />
-      <Button layoutX="260.0" layoutY="301.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="64.0" text="Login" />
+      <Button layoutX="251.0" layoutY="307.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="146.0" text="Login" />
      
    </children>
 </AnchorPane>

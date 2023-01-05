@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="650.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LoginController">
     
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="26.0" prefHeight="62.0" prefWidth="357.0" text="TASK MANAGER" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="71.0" prefHeight="62.0" prefWidth="357.0" text="TASK MANAGER" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="42.0" />
          </font>

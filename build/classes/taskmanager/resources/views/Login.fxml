@@ -14,11 +14,12 @@
             <Font size="42.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="243.0" />
-      <TextField layoutX="224.0" layoutY="187.0" />
-      <Label layoutX="151.0" layoutY="191.0" text="User" />
+      <TextField fx:id="password" layoutX="226.0" layoutY="243.0" />
+      <TextField fx:id="user_id" layoutX="224.0" layoutY="187.0" />
+      <Label layoutX="151.0" layoutY="191.0" text="User ID" />
       <Label layoutX="151.0" layoutY="246.0" text="Password" />
-      <Button layoutX="260.0" layoutY="301.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="26.0" prefWidth="64.0" text="Login" />
+      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="64.0" text="Login" />
+      <Label fx:id="message_label" layoutX="226.0" layoutY="284.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
      
    </children>
 </AnchorPane>

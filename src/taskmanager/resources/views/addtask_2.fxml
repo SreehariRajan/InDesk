@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -16,16 +16,13 @@
       </Text>
       <Button layoutX="301.0" layoutY="420.0" mnemonicParsing="false" onAction="#backInAddtask" prefHeight="26.0" prefWidth="86.0" text="BACK" />
       <Button layoutX="487.0" layoutY="420.0" mnemonicParsing="false" onAction="#finishInAddtask" prefHeight="26.0" prefWidth="86.0" text="ADD TASK" />
-      <ScrollPane layoutX="75.0" layoutY="97.0" prefHeight="271.0" prefWidth="226.0">
-         <content>
-            <ListView prefHeight="270.0" prefWidth="226.0" />
-         </content>
-      </ScrollPane>
-      <ScrollPane layoutX="356.0" layoutY="97.0" prefHeight="271.0" prefWidth="226.0">
-         <content>
-            <ListView prefHeight="270.0" prefWidth="226.0" />
-         </content>
-      </ScrollPane>
       <Button layoutX="394.0" layoutY="420.0" mnemonicParsing="false" onAction="#cancelInAddtask" prefHeight="26.0" prefWidth="86.0" text="CANCEL" />
+      <TableView fx:id="employees_table" layoutX="31.0" layoutY="98.0" prefHeight="306.0" prefWidth="588.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="120.79999160766602" text="ID" />
+          <TableColumn fx:id="name" minWidth="0.0" prefWidth="288.79998779296875" text="NAME" />
+            <TableColumn fx:id="added" maxWidth="177.5999755859375" prefWidth="177.5999755859375" text="ADD" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

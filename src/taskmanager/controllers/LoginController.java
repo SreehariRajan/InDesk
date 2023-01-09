@@ -21,11 +21,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
+import taskmanager.context.Context;
 /**
  *
  * @author Sreehari Rajan
  */
-public class LoginController {
+public class LoginController extends Context {
         @FXML
         private TextField password;
         @FXML
@@ -59,6 +60,11 @@ public class LoginController {
                 if (rs.next())
                 {
                   if (password.getText().equals(rs.getString(4))){
+                        logged_in_user_id=rs.getString(1);
+                        logged_in_user_name=rs.getString(2);
+                        logged_in_user_level=rs.getString(3);
+                        logged_in_user_password=rs.getString(4);
+
                         message_label.setText("");
                         Parent root = FXMLLoader.load((getClass().getResource("../resources/views/Menu.fxml")));
                         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

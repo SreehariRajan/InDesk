@@ -6,8 +6,14 @@
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/controllers/LoginController.java</file>
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/resources/views/addtask_1.fxml</file>
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/TaskManager.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/controllers/ViewtaskController.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/utils/AddEmployeeToTask.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/context/Context.java</file>
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/controllers/AddtaskController.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/utils/DBConnection.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/resources/views/addtask_2.fxml</file>
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/utils/AddTask.java</file>
+            <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/models/EmployeeModel.java</file>
             <file>file:/E:/Desktop/Netbeans/TaskManager/src/taskmanager/controllers/MainController.java</file>
         </group>
     </open-files>

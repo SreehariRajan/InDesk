@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LayoutController">
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="883.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="taskmanager.controllers.LayoutController">
     <stylesheets>
-        <URL value="@layout.css"/>
+        <URL value="@layout.css" />
     </stylesheets>
+   <children>
+      <Pane fx:id="nav_bar" prefHeight="638.0" prefWidth="200.0" style="-fx-background-color: #1a4baf;">
+         <children>
+            <Button fx:id="add_task" layoutX="28.0" layoutY="220.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: NONE;" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Line endX="100.0" layoutX="100.0" layoutY="175.0" opacity="0.16" startX="-100.0" stroke="WHITE" />
+            <Button fx:id="view_task" layoutX="28.0" layoutY="281.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: NONE;" text="VIEW" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="update_task" layoutX="28.0" layoutY="344.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: NONE;" text="UPDATE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="82.0" text="EMP ID" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="dashboard_emp_id" layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="132.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ScrollPane fx:id="content_div" layoutX="200.0" prefHeight="638.0" prefWidth="682.0">
+        <content>
+          <!--<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />-->
+                <fx:include source="viewtask_1.fxml"/>
+        </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>

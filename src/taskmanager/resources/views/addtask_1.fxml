@@ -34,19 +34,23 @@
          <children>
             <Pane prefHeight="360.0" prefWidth="643.0" GridPane.rowIndex="2">
                <children>
-                  <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK NAME">
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK NAME">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION">
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="task_name" layoutX="123.0" layoutY="1.0" prefHeight="26.0" prefWidth="369.0" />
-                  <TextArea fx:id="task_desc" focusTraversable="false" layoutX="14.0" layoutY="80.0" prefHeight="130.0" prefWidth="498.0" wrapText="true" />
-                  <Button layoutX="393.0" layoutY="240.0" mnemonicParsing="false" onAction="#nextInAddtask" prefHeight="26.0" prefWidth="119.0" text="NEXT" />
+                  <TextField fx:id="task_name" layoutX="101.0" layoutY="1.0" prefHeight="26.0" prefWidth="420.0" />
+                  <TextArea fx:id="task_desc" focusTraversable="false" layoutX="14.0" layoutY="80.0" prefHeight="130.0" prefWidth="508.0" wrapText="true" />
+                  <Button layoutX="403.0" layoutY="240.0" mnemonicParsing="false" onAction="#nextInAddtask" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #1a4baf;" text="NEXT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
                <children>
@@ -60,18 +64,18 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK ID">
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK ID">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="task_id" editable="true" layoutX="86.0" layoutY="32.0" prefHeight="26.0" prefWidth="63.0" />
-                  <Text layoutX="237.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST DATE">
+                  <TextField fx:id="task_id" editable="true" layoutX="70.0" layoutY="32.0" prefHeight="26.0" prefWidth="129.0" />
+                  <Text fill="#000000ab" layoutX="270.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST DATE">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <DatePicker fx:id="task_last_date" layoutX="345.0" layoutY="30.0" />
+                  <DatePicker fx:id="task_last_date" layoutX="345.0" layoutY="30.0" prefHeight="25.0" prefWidth="176.0" />
                </children>
             </Pane>
          </children>

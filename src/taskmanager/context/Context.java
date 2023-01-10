@@ -13,6 +13,12 @@ public class Context {
     public static String logged_in_user_id=null;
     public static String logged_in_user_password=null;
     public static String logged_in_user_level=null;
-        public static String current_task_id=null;
+    
+    
+    
+    public static String current_task_id=null;
+    public static String current_task_name=null;
+    public static String current_task_date=null;
+    public static String current_task_desc=null;
 
 }

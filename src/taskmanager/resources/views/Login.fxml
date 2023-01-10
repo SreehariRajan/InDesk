@@ -28,7 +28,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Label fx:id="message_label" layoutX="226.0" layoutY="284.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
+      <Label fx:id="message_label" layoutX="116.0" layoutY="284.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
       <AnchorPane layoutX="338.0" prefHeight="486.0" prefWidth="312.0" style="-fx-background-color: #1a4baf;">
          <children>
             <ImageView fitHeight="303.0" fitWidth="322.0" layoutX="16.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">

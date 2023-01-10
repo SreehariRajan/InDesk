@@ -133,7 +133,7 @@ public class ViewtaskController extends Context implements Initializable  {
        
        public void cancelInViewtask(ActionEvent event) throws IOException{
            //button name is baack in viewtask page1
-            Parent root = FXMLLoader.load((getClass().getResource("../resources/views/Menu.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("../resources/views/viewtask_1.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

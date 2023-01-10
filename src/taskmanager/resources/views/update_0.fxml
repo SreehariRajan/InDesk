@@ -26,8 +26,8 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="75.99998931884767" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="410.40001068115237" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="86.40000610351562" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="399.9999938964844" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <ScrollPane prefHeight="360.0" prefWidth="643.0" GridPane.rowIndex="1">

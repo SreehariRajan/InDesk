@@ -192,13 +192,15 @@ public class AddtaskController extends Context implements Initializable {
                 System.out.println(current_task_id);
                 connect = new DBConnection();
                 con = connect.getConnection();
-                String sql = "insert into tasks values(?,?,?,?,?)";
+                String sql = "insert into tasks values(?,?,?,?,?,?)";
                 stmt = con.prepareStatement(sql);
                 stmt.setString(1, task_id.getText());
                 stmt.setString(2, task_name.getText());
                 stmt.setString(3, task_desc.getText());
                 stmt.setString(4, task_last_date.getValue().toString());
                 stmt.setString(5, logged_in_user_id);
+                stmt.setBoolean(6, false);
+
 
                 stmt.executeUpdate();
                 

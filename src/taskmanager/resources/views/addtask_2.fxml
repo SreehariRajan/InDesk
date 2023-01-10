@@ -45,7 +45,7 @@
                         </TableView>
                      </content>
                   </ScrollPane>
-                  <Button layoutX="461.0" layoutY="284.0" mnemonicParsing="false" onAction="#finishInAddtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #1a4baf;" text="SUBMIT" textFill="WHITE">
+                  <Button layoutX="461.0" layoutY="284.0" mnemonicParsing="false" onAction="#finishInAddtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #1a4baf;" text="ADD TASK" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

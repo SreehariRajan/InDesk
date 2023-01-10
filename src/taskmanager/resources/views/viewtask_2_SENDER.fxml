@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane prefHeight="486.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.ViewtaskController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="644.7999938964844" minWidth="0.0" prefWidth="149.6" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="710.4" minWidth="10.0" prefWidth="560.8" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane prefHeight="486.0" prefWidth="294.0" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="132.59999389648436" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="132.59999389648436" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="353.40000610351564" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="360.0" prefWidth="643.0" GridPane.rowIndex="2">
+               <children>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
+                  <Label fx:id="task_desc" layoutX="14.0" layoutY="28.0" text="DESCRIPTIONLabel">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="16.0" layoutY="79.0" prefHeight="209.0" prefWidth="528.0">
+                     <content>
+                        <TableView fx:id="task_status_table" prefHeight="207.0" prefWidth="526.0">
+                          <columns>
+                            <TableColumn fx:id="empid" prefWidth="92.79994088411331" text="EMP ID" />
+                            <TableColumn fx:id="empstatus" prefWidth="214.40009307861328" text="IS SUBMITTED" />
+                              <TableColumn fx:id="empremarks" prefWidth="217.5999816894531" text="REMARKS" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+                  <Text fill="#000000ab" layoutX="15.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT STATUS" wrappingWidth="149.60000000000008">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="16.0" prefHeight="46.0" prefWidth="197.0" text="VIEW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane prefHeight="74.0" prefWidth="560.0" GridPane.rowIndex="1">
+               <children>
+                  <Text fill="#000000ab" layoutX="259.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST DATE:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK ID:" wrappingWidth="78.36181640625">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK NAME:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="task_last_date" layoutX="339.0" layoutY="16.0" text="last date">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="task_name" layoutX="102.0" layoutY="55.0" text="NAME">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="task_id" layoutX="75.0" layoutY="17.0" text="ID">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <VBox fx:id="sidebarDiv" prefHeight="200.0" prefWidth="100.0">
+            <fx:include source="SideBar.fxml" />
+      </VBox>
+   </children>
+</GridPane>

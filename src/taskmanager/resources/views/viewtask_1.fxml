@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <GridPane prefHeight="486.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.ViewtaskController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="644.7999938964844" minWidth="0.0" prefWidth="149.6" />

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane prefHeight="486.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.ViewtaskController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="644.7999938964844" minWidth="0.0" prefWidth="149.6" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="710.4" minWidth="10.0" prefWidth="560.8" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane prefHeight="486.0" prefWidth="294.0" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="132.59999389648436" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="132.59999389648436" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.4" minHeight="10.0" prefHeight="353.40000610351564" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="360.0" prefWidth="643.0" GridPane.rowIndex="2">
+               <children>
+                  <Text fill="#000000ab" layoutX="13.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="392.0" layoutY="240.0" mnemonicParsing="false" onAction="#submitInViewtask" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #1a4baf;" text="SUBMIT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
+                  <Text fill="#000000ab" layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REMARKS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="remarks" layoutX="103.0" layoutY="151.0" prefHeight="25.0" prefWidth="415.0" />
+                  <Label fx:id="task_desc" layoutX="13.0" layoutY="26.0" text="DESCRIPTIONLabel">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="16.0" prefHeight="46.0" prefWidth="197.0" text="VIEW" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane prefHeight="74.0" prefWidth="560.0" GridPane.rowIndex="1">
+               <children>
+                  <Text fill="#000000ab" layoutX="259.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST DATE:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK ID:" wrappingWidth="78.36181640625">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TASK NAME:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="task_last_date" layoutX="339.0" layoutY="16.0" text="last date">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="task_name" layoutX="102.0" layoutY="55.0" text="NAME">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="task_id" layoutX="75.0" layoutY="17.0" text="ID">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <VBox fx:id="sidebarDiv" prefHeight="200.0" prefWidth="100.0">
+            <fx:include source="SideBar.fxml" />
+      </VBox>
+   </children>
+</GridPane>

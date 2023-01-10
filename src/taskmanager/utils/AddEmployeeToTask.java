@@ -32,10 +32,13 @@ public class AddEmployeeToTask extends Context {
 
                 connect = new DBConnection();
                 con = connect.getConnection();
-                String sql = "insert into task_assigned values(?,?)";
+                String sql = "insert into task_assigned values(?,?,?,?)";
                 stmt = con.prepareStatement(sql);
                 stmt.setString(1, employee.getId());
                 stmt.setString(2, task_id);
+                stmt.setBoolean(3, false);
+                stmt.setString(4, "");
+
 
                 stmt.executeUpdate();
                 return true;

@@ -2,24 +2,48 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="650.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.LoginController">
     
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="71.0" prefHeight="62.0" prefWidth="357.0" text="TASK MANAGER" textAlignment="CENTER" wrapText="true">
+      <TextField fx:id="user_id" layoutX="114.0" layoutY="203.0" prefHeight="26.0" prefWidth="201.0" />
+      <Label layoutX="29.0" layoutY="211.0" text="USER ID" textFill="#1a4baf">
          <font>
-            <Font size="42.0" />
+            <Font name="Baskerville Old Face" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="password" layoutX="226.0" layoutY="243.0" />
-      <TextField fx:id="user_id" layoutX="224.0" layoutY="187.0" />
-      <Label layoutX="151.0" layoutY="191.0" text="User ID" />
-      <Label layoutX="151.0" layoutY="246.0" text="Password" />
-      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="64.0" text="Login" />
+      <Label layoutX="30.0" layoutY="255.0" text="PASSWORD" textFill="#1a4baf">
+         <font>
+            <Font name="Baskerville Old Face" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="92.0" layoutY="338.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="154.0" style="-fx-background-color: #1a4baf;" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
       <Label fx:id="message_label" layoutX="226.0" layoutY="284.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
+      <AnchorPane layoutX="338.0" prefHeight="486.0" prefWidth="312.0" style="-fx-background-color: #1a4baf;">
+         <children>
+            <ImageView fitHeight="303.0" fitWidth="322.0" layoutX="16.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label contentDisplay="CENTER" layoutX="26.0" layoutY="131.0" prefHeight="46.0" prefWidth="234.0" text="LOGIN" textAlignment="CENTER" textFill="#1a4baf" wrapText="true">
+         <font>
+            <Font name="Bodoni MT Bold" size="27.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password" layoutX="114.0" layoutY="248.0" prefHeight="26.0" prefWidth="202.0" />
      
    </children>
 </AnchorPane>

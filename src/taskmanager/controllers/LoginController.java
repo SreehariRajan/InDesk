@@ -66,7 +66,7 @@ public class LoginController extends Context {
                         logged_in_user_password=rs.getString(4);
 
                         message_label.setText("");
-                        Parent root = FXMLLoader.load((getClass().getResource("../resources/views/Menu.fxml")));
+                        Parent root = FXMLLoader.load((getClass().getResource("../resources/views/viewtask_1.fxml")));
                         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                         scene = new Scene(root);
                         stage.setScene(scene);

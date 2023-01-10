@@ -5,16 +5,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="623.0" prefWidth="199.0" style="-fx-background-color: #1a4baf; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="623.0" prefWidth="199.0" style="-fx-background-color: #1a4baf; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskmanager.controllers.SideBarController">
    <children>
       <VBox prefHeight="169.0" prefWidth="177.0">
          <children>
-            <Label prefHeight="32.0" prefWidth="47.0" text="ID:" textFill="WHITE">
+            <Label fx:id="dashboard_user_id" prefHeight="22.0" prefWidth="159.0" text="ID:" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="dashboard_user_id" prefHeight="36.0" prefWidth="177.0" text="57667" textFill="WHITE">
+            <Label fx:id="dashboard_user_id1" prefHeight="22.0" prefWidth="159.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Welcome" prefHeight="32.0" prefWidth="161.0" text="Welcome" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -26,17 +31,17 @@
             </Label>
          </children>
       </VBox>
-      <Button fx:id="addtask_1" mnemonicParsing="false" onAction="#handleChangeView" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: none;" text="ADD" textFill="WHITE">
+      <Button fx:id="addtask_1" mnemonicParsing="false" onAction="#gotoAddtask" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: none;" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="viewtask_1" mnemonicParsing="false" onAction="#handleChangeView" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: none;" text="VIEW" textFill="WHITE">
+      <Button fx:id="viewtask_1" mnemonicParsing="false" onAction="#gotoViewtask" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: none;" text="VIEW" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="update_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="238.0" style="-fx-background-color: none;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="update_button" mnemonicParsing="false" onAction="#gotoUpdate" prefHeight="50.0" prefWidth="238.0" style="-fx-background-color: none;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

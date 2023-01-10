@@ -173,7 +173,7 @@ public class AddtaskController extends Context implements Initializable {
 
   
        public void cancelInAddtask(ActionEvent event) throws IOException{
-            Parent root = FXMLLoader.load((getClass().getResource("../resources/views/Menu.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("../resources/views/viewtask_1.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

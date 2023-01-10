@@ -22,6 +22,7 @@ public class TaskManager extends Application {
             Parent root = FXMLLoader.load((getClass().getResource("resources/views/Login.fxml")));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("InDesk");
             stage.show();
         }catch(Exception e){
             e.printStackTrace();

@@ -39,8 +39,8 @@
                         <TableView fx:id="employees_table" prefHeight="266.0" prefWidth="546.0">
                            <columns>
                               <TableColumn fx:id="id" prefWidth="120.79999160766602" text="ID" />
-                              <TableColumn fx:id="name" minWidth="0.0" prefWidth="288.79998779296875" text="NAME" />
-                              <TableColumn fx:id="added" maxWidth="177.5999755859375" prefWidth="177.5999755859375" text="ADD" />
+                              <TableColumn fx:id="name" minWidth="0.0" prefWidth="244.8000030517578" text="NAME" />
+                              <TableColumn fx:id="added" maxWidth="221.60000610351562" prefWidth="152.00003051757812" text="IS ASSIGNED" />
                            </columns>
                         </TableView>
                      </content>

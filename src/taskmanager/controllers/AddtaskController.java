@@ -242,7 +242,21 @@ public class AddtaskController extends Context implements Initializable {
                  
                     current_task_id = task_id.getText();
                     System.out.println(current_task_id);
-
+                    Boolean exist;
+                    exist=false;
+                    
+                 
+                    
+                    sql = "select * from tasks where id=?";
+                    stmt = con.prepareStatement(sql);
+                    stmt.setString(1, task_id.getText());
+                    
+                       ResultSet rs = stmt.executeQuery();
+                        while (rs.next()) {
+                           exist=true;
+                           }
+                    if (exist==false){
+                    
                     sql = "insert into tasks values(?,?,?,?,?,?)";
                     stmt = con.prepareStatement(sql);
                     stmt.setString(1, task_id.getText());
@@ -260,6 +274,9 @@ public class AddtaskController extends Context implements Initializable {
                     scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
+                    }else{
+                        message_label.setText("Task ID already exist.");     
+                    }
                 
                
             }

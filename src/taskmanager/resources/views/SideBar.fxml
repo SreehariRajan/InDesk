@@ -46,22 +46,32 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label fx:id="dashboard_user_id12" prefHeight="22.0" prefWidth="159.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="5.0" />
+         </font>
+      </Label>
       <Button fx:id="viewtask_1" mnemonicParsing="false" onAction="#gotoViewtask" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: none;" text="VIEW" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label fx:id="dashboard_user_id13" prefHeight="21.0" prefWidth="159.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="5.0" />
+         </font>
+      </Label>
       <Button fx:id="update_button" mnemonicParsing="false" onAction="#gotoUpdate" prefHeight="50.0" prefWidth="238.0" style="-fx-background-color: none;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleLogout" prefHeight="229.0" prefWidth="159.0" style="-fx-background-color: none; -fx-underline: true;" textFill="WHITE">
+      <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleLogout" prefHeight="183.0" prefWidth="159.0" style="-fx-background-color: none; -fx-underline: true;" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: none; -fx-underline: true;" text="Log out" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogout" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: none; -fx-underline: true;" text="Log out" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

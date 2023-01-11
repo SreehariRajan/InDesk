@@ -27,6 +27,7 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -46,6 +47,7 @@ import taskmanager.models.TaskModel;
 import taskmanager.models.TaskStatusModel;
 import taskmanager.utils.AddEmployeeToTask;
 import taskmanager.utils.DBConnection;
+import taskmanager.utils.MarkAsVerified;
 //import javafx.scene.control.CheckBox;
 
 
@@ -78,7 +80,9 @@ public class ViewtaskController extends Context implements Initializable  {
         public TableColumn<TaskStatusModel, String> empid;
 
         @FXML
-        public TableColumn<TaskStatusModel, Boolean> empstatus;   
+        public TableColumn<TaskStatusModel, Boolean> empstatus;  
+        @FXML
+        public TableColumn<TaskStatusModel, Boolean> empverified;  
          @FXML
         public TableColumn<TaskStatusModel, String> empremarks; 
          
@@ -89,12 +93,19 @@ public class ViewtaskController extends Context implements Initializable  {
          
         @FXML
         private Label task_id;
+        
+        @FXML
+        private Label submitted;
+        @FXML
+        private Label verified;
         @FXML
         private Label task_name;
         @FXML
         private Label task_last_date;
         @FXML
         private Label task_desc;
+        @FXML
+        private Button submit_button;
         
         @FXML
         private TextField remarks;
@@ -299,14 +310,42 @@ public class ViewtaskController extends Context implements Initializable  {
                  
                  if (location.toString().contains("SENDER")){
                      if (task_status_table!=null){
+                         
+                         
+                         task_status_table.setRowFactory(tv -> {
+                TableRow<TaskStatusModel> row = new TableRow<>();
+                row.setOnMouseClicked(event -> {
+                    TableRow<TaskStatusModel> row_ = row;
+                    if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                        TaskStatusModel rowData = row_.getItem();
+                        MarkAsVerified obj = new MarkAsVerified();
+                        try {
+                            boolean updated = obj.mark(rowData,current_task_id);
+                            if (updated==true){
+                                rowData.setEmpverified(true);
+                                task_status_table.getItems().set(task_status_table.getSelectionModel().getSelectedIndex(), rowData);
+                                
+                            }else{
+                                
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(AddtaskController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                });
+                return row ;
+            });
+                         
+                         
                          System.out.print("Inside");
                      
                      empid.setCellValueFactory(new PropertyValueFactory<>("empid"));
                      empstatus.setCellValueFactory(new PropertyValueFactory<>("empstatus"));
+                     empverified.setCellValueFactory(new PropertyValueFactory<>("empverified"));
 
                      empremarks.setCellValueFactory(new PropertyValueFactory<>("empremarks"));
                     
-                    sql = "select employee_id,status,remarks from task_assigned where task_id=?";
+                    sql = "select employee_id,status,remarks,verified from task_assigned where task_id=?";
 
                 stmt = con.prepareStatement(sql);
                 stmt.setString(1, current_task_id);
@@ -314,8 +353,8 @@ public class ViewtaskController extends Context implements Initializable  {
                 ResultSet rs_ = stmt.executeQuery();
                 
                  while (rs_.next()) {
-                     System.out.print(rs_.getString(3)+"hello");
-                    TaskStatusModel task_status = new TaskStatusModel(rs_.getString(1), rs_.getString(3),rs_.getBoolean(2));
+                     System.out.print(rs_.getBoolean(4)+"hello");
+                    TaskStatusModel task_status = new TaskStatusModel(rs_.getString(1), rs_.getString(3),rs_.getBoolean(2),rs_.getBoolean(4));
                     
                     ObservableList<TaskStatusModel> tasks_status = FXCollections.observableArrayList(task_status);
                     task_status_table.getItems().addAll(tasks_status);
@@ -325,8 +364,27 @@ public class ViewtaskController extends Context implements Initializable  {
                 
             }else if (location.toString().contains("RECIEVER")){
                 
+                 sql = "select status,verified,remarks from task_assigned where task_id=? and employee_id=?";
+
+                stmt = con.prepareStatement(sql);
+                stmt.setString(1, current_task_id);
+                stmt.setString(2, logged_in_user_id);
                 
-            
+                 ResultSet rs_ = stmt.executeQuery();
+                
+                 while (rs_.next()) {
+                     submitted.setText(rs_.getBoolean(1)?"true":"false");
+                     verified.setText(rs_.getBoolean(2)?"true":"false");
+                     
+                     if (rs_.getBoolean(1)){
+                         submit_button.setVisible(false);
+                         remarks.setText(rs_.getString(3));
+                         remarks.setEditable(false);
+                     }
+                            
+                    
+                 }
+
             }
                
             }

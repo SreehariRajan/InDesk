@@ -37,22 +37,41 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Button layoutX="392.0" layoutY="240.0" mnemonicParsing="false" onAction="#submitInViewtask" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #1a4baf;" text="SUBMIT" textFill="WHITE">
+                  <Button fx:id="submit_button" layoutX="392.0" layoutY="240.0" mnemonicParsing="false" onAction="#submitInViewtask" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #1a4baf;" text="SUBMIT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
-                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
-                  <Text fill="#000000ab" layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REMARKS">
+                  <Text fx:id="remarks_label" fill="#000000ab" layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REMARKS">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
                   <TextField fx:id="remarks" layoutX="103.0" layoutY="151.0" prefHeight="25.0" prefWidth="415.0" />
+                  <Label fx:id="submitted" layoutX="100.0" layoutY="189.0" prefHeight="19.0" prefWidth="61.0" text="false">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                   <Label fx:id="task_desc" layoutX="13.0" layoutY="26.0" text="DESCRIPTIONLabel">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
+                  <Text fill="#000000ab" layoutX="12.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTED:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="verified" layoutX="85.0" layoutY="215.0" prefHeight="19.0" prefWidth="61.0" text="false">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#000000ab" layoutX="14.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VERIFIED:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
                <children>
@@ -61,7 +80,7 @@
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
-                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none; -fx-underline: true;" text="back" textFill="WHITE" />
                </children>
             </Pane>
             <Pane prefHeight="74.0" prefWidth="560.0" GridPane.rowIndex="1">

@@ -46,11 +46,11 @@
                   </Text>
                   <TextField fx:id="task_name" layoutX="101.0" layoutY="1.0" prefHeight="26.0" prefWidth="420.0" />
                   <TextArea fx:id="task_desc" focusTraversable="false" layoutX="14.0" layoutY="80.0" prefHeight="130.0" prefWidth="508.0" wrapText="true" />
-                  <Button layoutX="403.0" layoutY="240.0" mnemonicParsing="false" onAction="#nextInAddtask" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #1a4baf;" text="NEXT" textFill="WHITE">
+                  <Button fx:id="next" layoutX="403.0" layoutY="240.0" mnemonicParsing="false" onAction="#nextInAddtask" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #1a4baf;" text="NEXT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
-                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="190.0" text="" textFill="#fc0000" />
+                  <Label fx:id="message_label" layoutX="15.0" layoutY="222.0" prefHeight="18.0" prefWidth="381.0" text="" textFill="#fc0000" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
                <children>
@@ -59,7 +59,7 @@
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
-                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInAddtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInAddtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none; -fx-underline: true;" text="back" textFill="WHITE" />
                </children>
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">

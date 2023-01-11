@@ -37,6 +37,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableRow;
 import taskmanager.models.EmployeeModel;
 import taskmanager.utils.AddEmployeeToTask;
@@ -61,13 +63,17 @@ public class AddtaskController extends Context implements Initializable {
        
         @FXML
         private TableView<EmployeeModel> employees_table;
+         @FXML
+        private Label message_label;
         @FXML
         public TableColumn<EmployeeModel, String> id;
 
         @FXML
         public TableColumn<EmployeeModel, String> name;   
          @FXML
-        public TableColumn<EmployeeModel, Boolean> added;   
+        public TableColumn<EmployeeModel, Boolean> added; 
+         @FXML
+        private Button next; 
         
       
         
@@ -160,6 +166,47 @@ public class AddtaskController extends Context implements Initializable {
            
         //add your data to the table here.
 //        employees_table.setItems(data);
+        }else{
+                DBConnection connect=null;
+                PreparedStatement stmt=null;
+                Connection con=null;
+            try
+            {
+                
+                connect = new DBConnection();
+                con = connect.getConnection();
+                                 String sql;
+
+                  sql = "select max(level) from employees";
+               stmt = con.prepareStatement(sql);
+                
+                ResultSet rs = stmt.executeQuery();
+                Boolean is_possible_to_add;
+                is_possible_to_add=true;
+                 while (rs.next()) {
+                    if (rs.getInt(1)==logged_in_user_level){
+                           is_possible_to_add=false;
+                    }
+                    
+                }
+                 if (is_possible_to_add==false){
+                     next.setVisible(false);
+                     message_label.setText("Cannot add a task. No employee under you.");
+                 }
+                
+               
+            }
+            catch(Exception e)
+            {
+              System.out.println(e.getLocalizedMessage());
+            }
+            finally {
+                try {
+                    connect.closeConnection(con, stmt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AddtaskController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
 
@@ -181,34 +228,39 @@ public class AddtaskController extends Context implements Initializable {
        }
        public void nextInAddtask(ActionEvent event) throws IOException,SQLException{
            
-           
+                if (task_id.getText()!=null && task_name.getText()!=null && task_desc.getText()!=null && task_last_date.getValue()!=null && logged_in_user_id!=null){
               DBConnection connect=null;
                 PreparedStatement stmt=null;
                 Connection con=null;
             try
             {
-                
-                current_task_id = task_id.getText();
-                System.out.println(current_task_id);
-                connect = new DBConnection();
+                 String sql;
+                 connect = new DBConnection();
                 con = connect.getConnection();
-                String sql = "insert into tasks values(?,?,?,?,?,?)";
-                stmt = con.prepareStatement(sql);
-                stmt.setString(1, task_id.getText());
-                stmt.setString(2, task_name.getText());
-                stmt.setString(3, task_desc.getText());
-                stmt.setString(4, task_last_date.getValue().toString());
-                stmt.setString(5, logged_in_user_id);
-                stmt.setBoolean(6, false);
+
+               
+                 
+                    current_task_id = task_id.getText();
+                    System.out.println(current_task_id);
+
+                    sql = "insert into tasks values(?,?,?,?,?,?)";
+                    stmt = con.prepareStatement(sql);
+                    stmt.setString(1, task_id.getText());
+                    stmt.setString(2, task_name.getText());
+                    stmt.setString(3, task_desc.getText());
+                    stmt.setString(4, task_last_date.getValue().toString());
+                    stmt.setString(5, logged_in_user_id);
+                    stmt.setBoolean(6, false);
 
 
-                stmt.executeUpdate();
+                    stmt.executeUpdate();
+
+                    Parent root = FXMLLoader.load((getClass().getResource("../resources/views/addtask_2.fxml")));
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
                 
-                Parent root = FXMLLoader.load((getClass().getResource("../resources/views/addtask_2.fxml")));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
                
             }
             catch(Exception e)
@@ -218,6 +270,9 @@ public class AddtaskController extends Context implements Initializable {
             finally {
               connect.closeConnection(con, stmt);
             }
+                }else{
+                    message_label.setText("All fields are mandatory.");
+                }
 
             
        }

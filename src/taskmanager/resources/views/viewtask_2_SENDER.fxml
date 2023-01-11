@@ -50,8 +50,9 @@
                         <TableView fx:id="task_status_table" prefHeight="207.0" prefWidth="526.0">
                           <columns>
                             <TableColumn fx:id="empid" prefWidth="92.79994088411331" text="EMP ID" />
-                            <TableColumn fx:id="empstatus" prefWidth="214.40009307861328" text="IS SUBMITTED" />
-                              <TableColumn fx:id="empremarks" prefWidth="217.5999816894531" text="REMARKS" />
+                            <TableColumn fx:id="empstatus" prefWidth="96.80004119873047" text="IS SUBMITTED" />
+                              <TableColumn fx:id="empverified" prefWidth="82.39997863769531" text="IS VERIFIED" />
+                              <TableColumn fx:id="empremarks" prefWidth="253.60006713867188" text="REMARKS" />
                           </columns>
                         </TableView>
                      </content>
@@ -61,6 +62,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
+                  <Label alignment="CENTER_RIGHT" layoutX="294.0" layoutY="59.0" prefHeight="17.0" prefWidth="247.0" text="* double click to mark as verified" textFill="#000000a7" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
                <children>
@@ -69,7 +71,7 @@
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
-                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelInViewtask" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none; -fx-underline: true;" text="back" textFill="WHITE" />
                </children>
             </Pane>
             <Pane prefHeight="74.0" prefWidth="560.0" GridPane.rowIndex="1">

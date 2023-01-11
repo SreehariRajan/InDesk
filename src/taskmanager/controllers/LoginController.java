@@ -62,7 +62,7 @@ public class LoginController extends Context {
                   if (password.getText().equals(rs.getString(4))){
                         logged_in_user_id=rs.getString(1);
                         logged_in_user_name=rs.getString(2);
-                        logged_in_user_level=rs.getString(3);
+                        logged_in_user_level=rs.getInt(3);
                         logged_in_user_password=rs.getString(4);
 
                         message_label.setText("");

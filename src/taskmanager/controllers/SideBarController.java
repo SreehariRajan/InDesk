@@ -32,17 +32,30 @@ public class SideBarController extends Context implements Initializable{
        @FXML
         private Label dashboard_user_id;
         @FXML
+        private Label dashboard_user_level;
+        @FXML
         public Label dashboard_user_name;
         
         @Override
         public void initialize(URL location, ResourceBundle resources) {
             if (logged_in_user_id!=null){
                 dashboard_user_id.setText("ID: "+logged_in_user_id);
+
+                dashboard_user_level.setText("LEVEL: "+logged_in_user_level.toString());
                 dashboard_user_name.setText(logged_in_user_name);
             }
         }
 
        
+        public void handleLogout(ActionEvent event) throws IOException{
+            handleClearContext();
+            Parent root = FXMLLoader.load((getClass().getResource("../resources/views/Login.fxml")));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+       }
+        
        public void gotoAddtask(ActionEvent event) throws IOException{
             Parent root = FXMLLoader.load((getClass().getResource("../resources/views/addtask_1.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

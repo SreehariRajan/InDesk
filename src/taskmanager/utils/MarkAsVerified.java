@@ -9,18 +9,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import taskmanager.context.Context;
-import taskmanager.models.EmployeeModel;
+import taskmanager.models.TaskStatusModel;
 
 /**
  *
  * @author Sreehari Rajan
  */
-public class AddEmployeeToTask extends Context {
+public class MarkAsVerified extends Context {
 
-    public boolean add(EmployeeModel employee,String task_id) throws SQLException{
+    public boolean mark(TaskStatusModel task,String task_id) throws SQLException{
         System.out.println("tyry");
 
-        if (employee.getAdded()!=true){
+        if (task.getEmpverified()!=true){
             DBConnection connect=null;
             PreparedStatement stmt=null;
             Connection con=null;
@@ -32,13 +32,11 @@ public class AddEmployeeToTask extends Context {
 
                 connect = new DBConnection();
                 con = connect.getConnection();
-                String sql = "insert into task_assigned values(?,?,?,?,?)";
+                String sql = "update task_assigned set verified=true where task_id=? and employee_id=?";
                 stmt = con.prepareStatement(sql);
-                stmt.setString(1, employee.getId());
-                stmt.setString(2, task_id);
-                stmt.setBoolean(3, false);
-                stmt.setString(4, "");
-                stmt.setBoolean(5, false);
+                stmt.setString(1, task_id);
+                stmt.setString(2, task.getEmpid());
+                
 
 
 

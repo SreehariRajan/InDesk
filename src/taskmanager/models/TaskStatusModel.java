@@ -15,11 +15,14 @@ public class TaskStatusModel {
     private SimpleStringProperty empid;
             private SimpleStringProperty empremarks;
             private SimpleBooleanProperty empstatus;
+            private SimpleBooleanProperty empverified;
             
-            public TaskStatusModel(String empid, String empremarks,Boolean empstatus) {
+            public TaskStatusModel(String empid, String empremarks,Boolean empstatus,Boolean empverified) {
                 this.empid = new SimpleStringProperty(empid);
                 this.empremarks = new SimpleStringProperty(empremarks);
                 this.empstatus = new SimpleBooleanProperty(empstatus);
+                this.empverified = new SimpleBooleanProperty(empverified);
+
             }
             
             public String getEmpid() {
@@ -43,5 +46,12 @@ public class TaskStatusModel {
 
             public void setEmpstatus(Boolean empstatus) {
                 this.empstatus = new SimpleBooleanProperty(empstatus);
+            }
+            public Boolean getEmpverified() {
+                return empverified.get();
+            }
+
+            public void setEmpverified(Boolean empverified) {
+                this.empverified = new SimpleBooleanProperty(empverified);
             }
 }

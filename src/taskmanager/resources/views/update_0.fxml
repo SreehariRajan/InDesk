@@ -43,7 +43,7 @@
             </ScrollPane>
             <Pane prefHeight="106.0" prefWidth="650.0" style="-fx-background-color: #1a4baf;">
                <children>
-                  <Button fx:id="back" layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#backInUpdate_0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none;" text="back" textFill="WHITE" />
+                  <Button fx:id="back" layoutX="4.0" layoutY="26.0" mnemonicParsing="false" onAction="#backInUpdate_0" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: none; -fx-underline: true;" text="back" textFill="WHITE" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="16.0" prefHeight="46.0" prefWidth="197.0" text="UPDATE" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="23.0" />
